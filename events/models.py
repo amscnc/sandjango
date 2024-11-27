@@ -13,6 +13,22 @@ from django.db                      import models
 #         return None
 #     return None
 
+# from django.db import models
+# import geocoder
+
+# class YourModel(models.Model):
+#     address = models.CharField(max_length=255)
+#     latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+#     longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+
+#     def save(self, *args, **kwargs):
+#         if not self.latitude and not self.longitude:
+#             g = geocoder.google(self.address)
+#             if g.ok:
+#                 self.latitude = g.lat
+#                 self.longitude = g.lng
+#         super().save(*args, **kwargs)
+
 class Venue(models.Model):
     name                = models.CharField(max_length=255)
     street_address      = models.CharField(max_length=255, blank=False, null=False)
